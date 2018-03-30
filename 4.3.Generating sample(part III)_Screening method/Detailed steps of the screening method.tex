@@ -1,0 +1,39 @@
+\documentclass[10pt,stdletter,dateno,sigleft]{newlfm}
+\usepackage{amsmath}
+
+\begin{document}
+
+First, generating two samples, say $u_1$ and $u_2$, with size n, where $u_1, u_2 \sim N(0, 1)$.
+
+Second, calculate the empirical distribution function of y, which is as follow:
+\begin{equation*}
+k u_2=k F(y)=
+\left\{
+\begin{aligned}
+& \frac{y^\alpha} {\alpha}            & y\leq 1\\
+\\
+& k-e^{-y} & y> 1
+\end{aligned}
+\right.
+\end{equation*}
+where $k=\frac{1}{\alpha}+\frac{1}{e}$
+
+And via inverse transformation, we get
+\begin{equation*}
+y=
+\left\{
+\begin{aligned}
+& (\alpha k u_2)^{1/\alpha} & u_2\leq \frac{1}{\alpha k}\\
+\\
+& -\ln(k-k u_2) & u_2> \frac{1}{\alpha k}
+\end{aligned}
+\right.
+\end{equation*}
+
+Then, we get x from y if and only if one of the following conditions is established:
+\begin{itemize}
+\item When $y \leq 1$, $u_1 \leq e^{-y}$
+\item When $y > 1$, $u < y^{\alpha-1}$
+\end{itemize}
+
+\end{document} 

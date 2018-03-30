@@ -1,0 +1,52 @@
+\documentclass[12pt]{beamer}
+\usetheme{Warsaw}
+
+\begin{document}
+
+\title{Basics of \\
+       Applied Stochastic Processes \\}
+\author{Weihao Lu}
+\date{\today}
+\frame{\titlepage}
+
+
+\frame{
+        \frametitle{Introduction}
+A discrete-time \emph{stochastic process} $\{X_n : n \geqslant 0\}$ on a countable set \emph{S} is a collection of \emph{S}-valued random variables defined on a probability space $(\Omega,\mathcal{F},\mathcal{P})$. The $\mathcal{P}$ is a probability measure on a family of events $\mathcal{F}$ (a $\sigma$-field) in an event-space $\Omega$. The set \emph{S} is the \emph{state space} of the process, and the value ${X_n \in S}$ is the \emph{state} of the process at \emph{time n}. The \emph{n} may represent a parameter other than time such as a length or a job number.
+
+The \emph{finite-dimensional} distributions of the process are
+\begin{equation}\label{finitedim}
+P\{X_0 = i_0,\ldots,X_n = i_n\},\hspace{1cm} i_0,\ldots,i_n \in S, n \geqslant 0
+\end{equation}
+These probabilities uniquely determine the probabilities of all events of the
+process.
+}
+
+
+\frame{
+       \frametitle{Markov Chains}
+A Markov chain is defined as follows.
+
+\vspace{2 ex}
+
+\textbf{Definition 1.} A stochastic process $X = \{X_n : n \geqslant 0\}$ on a countable set \emph{S} is a \emph{Markov Chain} if, for any $i,j \in S$ and $n \geqslant 0$,
+\begin{align}
+  \label{marprop} P\{X_n+1 = j |X_0,\ldots,X_n\} &= P\{X_n+1 = j |X_n\} \\
+  \label{timehomo} P\{X_n+1 = j |X_n\} &= p_{ij}
+\end{align}
+The $p_{ij}$ is the probability that the Markov chain jumps from state $i$ to state
+$j$. These \emph{transition probabilities} satisfy $\sum_{j \in S}p_{ij} = 1, i \in S$, and the matrix ${\bf P} = (pij)$ is the \emph{transition matrix} of the chain.
+}
+
+
+\frame{
+       \frametitle{Markov Chains}
+Condition (\ref{marprop}), called the \emph{Markov property}, says that, at any time \emph{n}, the next state $X_{n+1}$ is conditionally independent of the past $X_0,\ldots,X_{n-1}$ given the present state $X_n$.
+
+\vspace{2 ex}
+
+Condition (\ref{timehomo}) simply says the transition probabilities do not depend on
+the time parameter \emph{n}; the Markov chain is therefore ``time-homogeneous''.
+}
+
+\end{document} 
